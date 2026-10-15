@@ -16,24 +16,23 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
-            <!-- Черное полноэкранное окно с календарем -->
+    <!-- Черное полноэкранное окно блокировки с календарем -->
     <div id="date-lock-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000000; z-index: 99999; display: none; flex-direction: column; align-items: center; justify-content: center; color: #ffffff; font-family: sans-serif;">
-        <div style="text-align: center; padding: 20px; background: #111111; border: 2px solid #333333; border-radius: 8px; box-shadow: 0 0 20px rgba(255,255,255,0.1);">
-            <h2 style="margin-bottom: 20px;">Вход только для неформалов</h2>
+        <div style="text-align: center; padding: 30px; background: #111111; border: 2px solid #333333; border-radius: 8px; box-shadow: 0 0 20px rgba(255,255,255,0.1); max-width: 400px; width: 90%;">
+            <h2 style="margin-bottom: 20px; font-weight: bold;">Вход только для ебланов</h2>
             <p style="color: #888888; margin-bottom: 20px;">Выбери секретную дату для входа:</p>
             
-            <!-- Сам встроенный календарь HTML -->
-            <input type="date" id="secret-date-input" style="padding: 10px; font-size: 18px; border-radius: 4px; border: 1px solid #444444; background: #222222; color: #ffffff; margin-bottom: 20px; display: block; width: 100%;">
+            <!-- Встроенный календарь -->
+            <input type="date" id="secret-date-input" style="padding: 12px; font-size: 18px; border-radius: 4px; border: 1px solid #444444; background: #222222; color: #ffffff; margin-bottom: 20px; display: block; width: 100%;">
             
-            <button onclick="checkSecretDate()" style="padding: 10px 20px; font-size: 16px; background-color: #ffffff; color: #000000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%;">Войти на сайт</button>
+            <button onclick="checkSecretDate()" style="padding: 12px 20px; font-size: 16px; background-color: #ffffff; color: #000000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%;">Войти на сайт</button>
             <p id="error-msg" style="color: #ff3333; margin-top: 15px; font-weight: bold; display: none;"></p>
         </div>
     </div>
 
     <script>
-        // Проверяем, авторизован ли пользователь
+        // Проверяем локальное хранилище устройства
         if (localStorage.getItem('site_access') !== 'true') {
-            // Если нет — показываем черное окно с календарем
             document.getElementById('date-lock-screen').style.display = 'flex';
         }
 
@@ -41,18 +40,18 @@
             let inputField = document.getElementById('secret-date-input');
             let errorField = document.getElementById('error-msg');
             
-            // Внимание: встроенный календарь всегда выдает дату в формате ГГГГ-ММ-ДД
-            // Если твоя дата 12 сентября 2026 года, то пишем её как "2026-09-12"
+            // НАСТРОЕНО: Сверка с датой 2 января 2025 года (2025-01-02)
             if (inputField.value === "2025-01-02") {
-                alert("Доступ разрешен!");
+                alert("Заходи броске:)");
                 localStorage.setItem('site_access', 'true');
-                document.getElementById('date-lock-screen').style.display = 'none'; // Скрываем окно
+                document.getElementById('date-lock-screen').style.display = 'none';
             } else {
                 errorField.innerText = "Неверная дата. Иди нахуй отсюда крч.";
                 errorField.style.display = 'block';
             }
         }
     </script>
+
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">

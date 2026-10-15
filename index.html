@@ -16,42 +16,6 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
-    <!-- Черное полноэкранное окно блокировки с календарем -->
-    <div id="date-lock-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000000; z-index: 99999; display: none; flex-direction: column; align-items: center; justify-content: center; color: #ffffff; font-family: sans-serif;">
-        <div style="text-align: center; padding: 30px; background: #111111; border: 2px solid #333333; border-radius: 8px; box-shadow: 0 0 20px rgba(255,255,255,0.1); max-width: 400px; width: 90%;">
-            <h2 style="margin-bottom: 20px; font-weight: bold;">Вход только для ебланов</h2>
-            <p style="color: #888888; margin-bottom: 20px;">Выбери секретную дату для входа:</p>
-            
-            <!-- Встроенный календарь -->
-            <input type="date" id="secret-date-input" style="padding: 12px; font-size: 18px; border-radius: 4px; border: 1px solid #444444; background: #222222; color: #ffffff; margin-bottom: 20px; display: block; width: 100%;">
-            
-            <button onclick="checkSecretDate()" style="padding: 12px 20px; font-size: 16px; background-color: #ffffff; color: #000000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%;">Войти на сайт</button>
-            <p id="error-msg" style="color: #ff3333; margin-top: 15px; font-weight: bold; display: none;"></p>
-        </div>
-    </div>
-
-    <script>
-        // Проверяем локальное хранилище устройства
-        if (localStorage.getItem('site_access') !== 'true') {
-            document.getElementById('date-lock-screen').style.display = 'flex';
-        }
-
-        function checkSecretDate() {
-            let inputField = document.getElementById('secret-date-input');
-            let errorField = document.getElementById('error-msg');
-            
-            // НАСТРОЕНО: Сверка с датой 2 января 2025 года (2025-01-02)
-            if (inputField.value === "2025-01-02") {
-                alert("Заходи броске:)");
-                localStorage.setItem('site_access', 'true');
-                document.getElementById('date-lock-screen').style.display = 'none';
-            } else {
-                errorField.innerText = "Неверная дата. Иди нахуй отсюда крч.";
-                errorField.style.display = 'block';
-            }
-        }
-    </script>
-
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -67,6 +31,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Общие умения</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Интересы</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Дискография</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#FAQ">Обратная связь</a></li>
                 </ul>
             </div>
         </nav>
@@ -82,7 +47,7 @@
                     </h1>
                     <div class="subheading mb-5">
                         Владивосток · Гоголя 42 · +7(902)554-**--** ·
-                        <a href="mailto:name@email.com">kitaklimoff@icloud.com</a>
+                        <a href="kitaklimoff@icloud.com">kitaklimoff@icloud.com</a>
                     </div>
                     <p class="lead mb-5">Мой простенький сайт написаный с помощью ии и чьей то матери под столом...</p>
                     <div class="social-icons">
@@ -163,11 +128,11 @@
             <div class="flex-shrink-0"><span class="text-primary">Сентябрь 2015 - Май 2026</span></div>
         </div>
     </div>
-</section>
-<hr class="m-0" />
+    </section>
+    <hr class="m-0" />
 
-<!-- Skills-->
-<section class="resume-section" id="skills">
+        <!-- Skills-->
+    <section class="resume-section" id="skills">
     <div class="resume-section-content">
         <h2 class="mb-5">Общие умения</h2>
         
@@ -201,19 +166,18 @@
             </li>
         </ul>
     </div>
-</section>
-<hr class="m-0" />
+        </section>
+        <hr class="m-0" />
 
             <!-- Interests-->
-<section class="resume-section" id="interests">
-    <div class="resume-section-content">
+        <section class="resume-section" id="interests">
+        <div class="resume-section-content">
         <h2 class="mb-5">Интересы и Увлечения</h2>
         <p>Если я не залипаю в код в своем IT-hub, то с огромной вероятностью я либо рублю тяжеляк, либо трачу последние деньги в Стиме на очередную масштабную игрушку. Музыка для меня — не просто фон, а способ выплеснуть эмоции и раздать плотного звука на инструментах.</p>
         <p class="mb-0">В свободное время люблю посидеть с друзьями, обсудить свежие железки, повайбить под nu-metal и придумать парочку новых аморальных шуток для своего телеграм-канала П.С.М. Живу во Владивостоке, ценю хороший щитпостинг, крутые CD-диски в коллекции и годные споры в интернете.</p>
     </div>
-</section>
+        </section>
 <hr class="m-0" />
-<!-- Awards / Дискография -->
 <!-- Awards / Дискография -->
 <section class="resume-section" id="awards">
     <div class="resume-section-content">
@@ -313,11 +277,75 @@
     </div>
 </section>
 <hr class="m-0" />
+<!-- === НАЧАЛО БЛОКА АНОНИМНОЙ ОБРАТНОЙ СВЯЗИ === -->
+<section id="FAQ">
+    <!-- Меняем my-5 или py-5 на mt-2 mb-4 -->
+    <div class="container mt-2 mb-4"> 
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-danger">
+                <div class="card-header fw-bold bg-dark text-white text-center">
+                    Написать Анон-вопрос/пожелание
+                </div>
+                <div class="card-body">
+                    <form id="feedbackForm">
+                        <div class="mb-3">
+                            <label for="userMessage" class="form-label small text-muted">Ваше сообщение</label>
+                            <textarea class="form-control" id="userMessage" rows="4" required placeholder="Напишите здесь то, что боитесь сказать лично..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100" id="submitBtn">Отправить мне в Telegram</button>
+                    </form>
+                    <div id="formStatus" class="mt-3 small text-center d-none"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <script>
+document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
 
+    // Сюда вы уже вставили вашу ссылку, менять её не нужно!
+    const FORMSPREE_URL = 'https://formspree.io/f/xaeqaqqj'; 
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    const message = document.getElementById('userMessage').value;
+    const submitBtn = document.getElementById('submitBtn');
+    const statusDiv = document.getElementById('formStatus');
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Отправка...';
+    statusDiv.classList.add('d-none');
+
+    try {
+        const response = await fetch(FORMSPREE_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                message: message 
+            })
+        });
+
+        if (response.ok) {
+            statusDiv.className = 'mt-3 small text-center text-success';
+            statusDiv.innerText = '✨ Сообщение успешно отправлено анонимно!';
+            document.getElementById('feedbackForm').reset();
+        } else {
+            throw new Error('Ошибка сервера доставки');
+        }
+    } catch (error) {
+        console.error(error);
+        statusDiv.className = 'mt-3 small text-center text-danger';
+        statusDiv.innerText = '❌ Ошибка отправки. Попробуйте еще раз.';
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Отправить анонимно';
+        statusDiv.classList.remove('d-none');
+    }
+});
+</script>
+</section>
+</body>
+<center>
+    Если увидили ошибку или еще какие то проблемы с сайтом пишите в тг <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Main переброс</a></li>
+</center>
 </html>

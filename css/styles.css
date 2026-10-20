@@ -1995,7 +1995,7 @@ progress {
 .form-text {
   margin-top: 0.25rem;
   font-size: 0.875em;
-  color: #6c757d;
+  color: #ffffff;
 }
 
 .form-control {
@@ -2005,7 +2005,7 @@ progress {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #ffffff;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
@@ -10983,7 +10983,7 @@ section.resume-section .resume-section-content {
 
 /* Перекрашивает подложку всего сайта в темно-серый цвет */
 body, .resume-section {
-    background-color: #212529 !important;
+    background-color: #1e2125 !important;
     color: #ffffff !important;
 }
 
